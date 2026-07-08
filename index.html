@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Durva Amin — Full Stack Developer, Data Analyst & Cybersecurity Enthusiast</title>
+<meta name="description" content="Portfolio of Durva Amin — B.Tech student at KJSIT Mumbai. Full Stack Developer, Data Analyst, Cybersecurity Enthusiast">
+<meta name="keywords" content="Durva Amin, portfolio, full stack developer, data analyst, cybersecurity, Mumbai, KJSIT">
+<meta name="author" content="Durva Amin">
+
+<!-- Open Graph (WhatsApp, LinkedIn, Facebook previews) -->
+<meta property="og:title" content="Durva Amin — Full Stack Developer, Data Analyst & Cybersecurity Enthusiast">
+<meta property="og:description" content="Portfolio of Durva Amin — B.Tech student at KJSIT Mumbai. Full Stack Developer, Data Analyst & Cybersecurity Enthusiast">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://durva912.github.io/durva-portfolio/">
+<meta property="og:image" content="https://raw.githubusercontent.com/durva912/durva-portfolio/main/preview.png">
+
+<!-- Twitter/X preview -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Portfolio of Durva Amin — B.Tech student at KJSIT Mumbai. Full Stack Developer, Data Analys & Cybersecurity Enthusiast">
+<meta name="twitter:description" content="Full Stack Developer, Data Analyst & Cybersecurity Enthusiast based in Mumbai.">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/durva912/durva-portfolio/main/preview.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="favicon.ico">
+<style>
+  :root {
+    --bg: #080b10;
+    --surface: #0e1219;
+    --border: rgba(255,255,255,0.07);
+    --accent: #3b82f6;
+    --accent2: #06b6d4;
+    --text: #e2e8f0;
+    --muted: #64748b;
+    --glow: rgba(59,130,246,0.18);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;font-size:16px}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'DM Sans',sans-serif;
+    line-height:1.7;
+    overflow-x:hidden;
+  }
+
+  /* ── NOISE OVERLAY ── */
+  body::before{
+    content:'';
+    position:fixed;inset:0;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events:none;z-index:0;opacity:.4;
+  }
+
+  /* ── SCROLLBAR ── */
+  ::-webkit-scrollbar{width:4px}
+  ::-webkit-scrollbar-track{background:var(--bg)}
+  ::-webkit-scrollbar-thumb{background:var(--accent);border-radius:2px}
+
+  /* ── NAV ── */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:1.1rem 6%;
+    backdrop-filter:blur(20px);
+    background:rgba(8,11,16,0.75);
+    border-bottom:1px solid var(--border);
+    transition:background .3s;
+  }
+  .logo{
+    font-family:'Syne',sans-serif;
+    font-weight:800;font-size:1.15rem;
+    letter-spacing:-.02em;
+    background:linear-gradient(135deg,#fff 40%,var(--accent2));
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .nav-links{display:flex;gap:2rem;list-style:none}
+  .nav-links a{
+    color:var(--muted);font-size:.88rem;font-weight:500;
+    text-decoration:none;letter-spacing:.04em;
+    transition:color .2s;
+  }
+  .nav-links a:hover{color:#fff}
+  .nav-cta{
+    background:var(--accent);color:#fff;
+    border:none;padding:.5rem 1.2rem;border-radius:6px;
+    font-size:.85rem;font-weight:600;cursor:pointer;
+    font-family:'DM Sans',sans-serif;
+    transition:opacity .2s,transform .2s;
+    text-decoration:none;
+  }
+  .nav-cta:hover{opacity:.85;transform:translateY(-1px)}
+  .hamburger{display:none !important;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+  .hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:.3s}
+
+  /* ── HERO ── */
+  #hero{
+    min-height:100vh;
+    display:flex;align-items:center;
+    padding:0 6%;
+    position:relative;overflow:hidden;
+  }
+  .hero-grid-bg{
+    position:absolute;inset:0;
+    background-image:
+      linear-gradient(rgba(59,130,246,0.04) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(59,130,246,0.04) 1px,transparent 1px);
+    background-size:60px 60px;
+    mask-image:radial-gradient(ellipse 70% 80% at 50% 50%,black 40%,transparent 100%);
+  }
+  .hero-blob{
+    position:absolute;
+    width:600px;height:600px;
+    background:radial-gradient(circle,rgba(59,130,246,0.12) 0%,transparent 70%);
+    border-radius:50%;
+    top:50%;left:55%;transform:translate(-50%,-50%);
+    filter:blur(40px);
+    animation:blobPulse 6s ease-in-out infinite;
+  }
+  @keyframes blobPulse{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.12)}}
+  .hero-content{position:relative;z-index:1;max-width:680px;}
+  .hero-badge{
+    display:inline-flex;align-items:center;gap:.5rem;
+    background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.25);
+    color:var(--accent);padding:.35rem .9rem;border-radius:100px;
+    font-size:.78rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+    margin-bottom:1.5rem;
+    animation:fadeUp .8s ease both;
+  }
+  .hero-badge::before{content:'';width:6px;height:6px;background:var(--accent);border-radius:50%;animation:blink 1.4s ease infinite}
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+  .hero-name{
+    font-family:'Syne',sans-serif;
+    font-size:clamp(2.8rem,7vw,5.5rem);
+    font-weight:800;line-height:1.0;
+    letter-spacing:-.03em;
+    margin-bottom:.6rem;
+    animation:fadeUp .9s .1s ease both;
+  }
+  .hero-name span{
+    background:linear-gradient(135deg,var(--accent) 0%,var(--accent2) 100%);
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .hero-title{
+    font-size:clamp(1rem,2.5vw,1.3rem);
+    color:var(--muted);font-weight:400;
+    margin-bottom:1rem;letter-spacing:.01em;
+    animation:fadeUp 1s .2s ease both;
+  }
+  .hero-tagline{
+    font-size:clamp(1.05rem,2.2vw,1.15rem);
+    color:#94a3b8;margin-bottom:2.5rem;
+    max-width:520px;line-height:1.8;
+    animation:fadeUp 1s .3s ease both;
+  }
+  .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp 1s .4s ease both}
+  .btn-primary{
+    background:var(--accent);color:#fff;
+    padding:.75rem 1.8rem;border-radius:8px;
+    font-weight:600;font-size:.95rem;text-decoration:none;
+    transition:transform .2s,box-shadow .2s;
+    box-shadow:0 0 30px rgba(59,130,246,.3);
+  }
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 40px rgba(59,130,246,.45)}
+  .btn-ghost{
+    border:1px solid var(--border);color:var(--text);
+    padding:.75rem 1.8rem;border-radius:8px;
+    font-weight:500;font-size:.95rem;text-decoration:none;
+    transition:border-color .2s,transform .2s;
+  }
+  .btn-ghost:hover{border-color:var(--accent);transform:translateY(-2px)}
+  .hero-stats{
+    display:flex;gap:2.5rem;margin-top:3.5rem;flex-wrap:wrap;
+    animation:fadeUp 1s .5s ease both;
+  }
+  .stat-item{border-left:2px solid var(--accent);padding-left:.9rem}
+  .stat-num{font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;color:#fff}
+  .stat-label{font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+
+  @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+
+  
+  /* ── SECTION COMMONS ── */
+  section{padding:7rem 6%;position:relative}
+  .section-label{
+    display:inline-block;
+    font-size:.72rem;font-weight:700;letter-spacing:.15em;
+    text-transform:uppercase;color:var(--accent);
+    margin-bottom:1rem;
+  }
+  .section-title{
+    font-family:'Syne',sans-serif;
+    font-size:clamp(1.8rem,4vw,2.8rem);
+    font-weight:800;letter-spacing:-.02em;
+    line-height:1.15;margin-bottom:1rem;
+  }
+  .section-sub{color:var(--muted);max-width:540px;line-height:1.8;margin-bottom:3.5rem}
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.visible{opacity:1;transform:none}
+
+  /* ── ABOUT ── */
+  #about{background:var(--surface)}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+  .about-text p{color:#94a3b8;line-height:1.9;margin-bottom:1.2rem}
+  .about-pills{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem}
+  .about-pill{
+  background:rgba(59,130,246,.08);
+  border:1px solid rgba(59,130,246,.2);
+  color:var(--accent);
+  padding:.35rem .85rem;
+  border-radius:100px;
+  font-size:.78rem;
+  font-weight:600;
+}
+  .about-card{
+    background:rgba(255,255,255,.03);border:1px solid var(--border);
+    border-radius:16px;padding:2rem;
+    display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;
+  }
+  .mini-stat{
+    background:rgba(59,130,246,.06);border:1px solid rgba(59,130,246,.12);
+    border-radius:10px;padding:1.2rem;text-align:center;
+  }
+  .mini-stat .num{font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;color:var(--accent)}
+  .mini-stat .lbl{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-top:.2rem}
+
+  /* ── SKILLS ── */
+  .skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem}
+  .skill-cat{
+    background:var(--surface);border:1px solid var(--border);
+    border-radius:14px;padding:1.6rem;
+    transition:border-color .3s,transform .3s;
+  }
+  .skill-cat:hover{border-color:rgba(59,130,246,.3);transform:translateY(-4px)}
+  .skill-cat-title{
+    font-family:'Syne',sans-serif;font-weight:700;font-size:.9rem;
+    letter-spacing:.04em;color:#fff;margin-bottom:1.2rem;
+    display:flex;align-items:center;gap:.6rem;
+  }
+  .skill-cat-title .icon{font-size:1.1rem}
+  .skill-item{margin-bottom:1rem}
+  .skill-row{display:flex;justify-content:space-between;margin-bottom:.4rem;font-size:.83rem}
+  .skill-name{color:#cbd5e1}
+  .skill-pct{color:var(--accent);font-weight:600}
+  .skill-bar-bg{height:4px;background:rgba(255,255,255,.06);border-radius:4px;overflow:hidden}
+  .skill-bar-fill{
+    height:100%;border-radius:4px;
+    background:linear-gradient(90deg,var(--accent),var(--accent2));
+    width:0;transition:width 1.2s cubic-bezier(.25,.46,.45,.94);
+  }
+  .stack-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 1.5rem 0 0 0;  /* changed: bottom padding removed */
+}
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px 12px 14px;
+    border-radius: 999px;
+    border: 1.5px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.05);
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    cursor: default;
+    transition: transform 0.2s cubic-bezier(.34, 1.56, .64, 1),
+                background 0.2s, border-color 0.2s, box-shadow 0.2s;
+  }
+  .pill:hover {
+    transform: translateY(-4px) scale(1.06);
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  }
+  .pill img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    flex-shrink: 0;
+    transition: transform 0.2s cubic-bezier(.34, 1.56, .64, 1);
+  }
+  .pill:hover img {
+    transform: rotate(-8deg) scale(1.15);
+  }.excel-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  background: #217346;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.excel-icon svg { width: 16px; height: 16px; }
+
+  /* ── EXPERIENCE ── */
+  #experience{background:var(--bg)}
+  .exp-timeline{position:relative;padding-left:2rem}
+  .exp-timeline::before{
+    content:'';position:absolute;left:0;top:0;bottom:0;
+    width:1px;background:linear-gradient(to bottom,var(--accent),transparent);
+  }
+  .exp-item{
+    position:relative;margin-bottom:2.5rem;
+    background:rgba(255,255,255,.02);border:1px solid var(--border);
+    border-radius:14px;padding:1.8rem;
+    transition:border-color .3s;
+  }
+  .exp-item:hover{border-color:rgba(59,130,246,.25)}
+  .exp-item::before{
+    content:'';position:absolute;left:-2.5rem;top:1.8rem;
+    width:10px;height:10px;border-radius:50%;
+    background:var(--accent);border:2px solid var(--bg);
+    box-shadow:0 0 10px var(--accent);
+  }
+  .exp-header{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin-bottom:.6rem}
+  .exp-role{font-family:'Syne',sans-serif;font-weight:700;font-size:1.05rem;color:#fff}
+  .exp-date{
+    font-size:.78rem;color:var(--accent);font-weight:600;
+    background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2);
+    padding:.25rem .7rem;border-radius:100px;height:fit-content;
+  }
+  .exp-company{color:var(--accent2);font-size:.88rem;font-weight:500;margin-bottom:.8rem}
+  .exp-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.9rem}
+  .tag{
+    background:rgba(255,255,255,.04);border:1px solid var(--border);
+    color:var(--muted);padding:.2rem .65rem;border-radius:4px;font-size:.74rem;
+  }
+
+  /* ── PROJECTS ── */
+  #projects{
+  background:var(--surface);
+  border-top:1px solid rgba(59,130,246,0.15);
+}
+  .projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.5rem}
+  .proj-card{
+    background:var(--surface);border-top:1px solid rgba(59,130,246,0.15);
+    border-radius:16px;padding:1.8rem;
+    display:flex;flex-direction:column;gap:1rem;
+    transition:border-color .3s,transform .3s;
+    position:relative;overflow:hidden;
+  }
+  .proj-card::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg,rgba(59,130,246,.04),transparent 60%);
+  opacity:0;
+  transition:opacity .3s;
+  pointer-events: none; /* ⭐ THIS FIXES YOUR ISSUE */
+}
+  .proj-card > * {
+  position: relative;
+  z-index: 1;
+}
+  .proj-card:hover{border-color:rgba(59,130,246,.35);transform:translateY(-5px)}
+  .proj-card:hover::before{opacity:1}
+  .proj-icon{
+    width:44px;height:44px;border-radius:10px;
+    background:linear-gradient(135deg,var(--accent),var(--accent2));
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.2rem;
+  }
+  .proj-title{font-family:'Syne',sans-serif;font-weight:700;font-size:1.05rem;color:#fff}
+  .proj-desc{font-size:.85rem;color:var(--muted);line-height:1.7;flex:1}
+  .proj-tags{display:flex;flex-wrap:wrap;gap:.4rem}
+  .proj-tag{
+    background:rgba(59,130,246,.08);border:1px solid rgba(59,130,246,.15);
+    color:var(--accent);padding:.18rem .55rem;border-radius:4px;font-size:.72rem;font-weight:600;
+  }
+
+  /* ── EDUCATION ── */
+  #education{background:var(--surface)}
+  .edu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem}
+  .edu-card{
+    background:rgba(255,255,255,.02);border:1px solid var(--border);
+    border-radius:14px;padding:1.8rem;
+    transition:border-color .3s,transform .3s;
+  }
+  .edu-card:hover{border-color:rgba(59,130,246,.25);transform:translateY(-4px)}
+  .edu-degree{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:#fff;margin-bottom:.3rem}
+  .edu-school{color:var(--accent2);font-size:.88rem;font-weight:500;margin-bottom:.5rem}
+  .edu-meta{font-size:.8rem;color:var(--muted)}
+
+  /* ── CERTIFICATIONS ── */
+  .cert-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem}
+  .cert-card{
+    background:var(--surface);border:1px solid var(--border);
+    border-radius:10px;padding:1.1rem 1.3rem;
+    display:flex;align-items:flex-start;gap:.9rem;
+    transition:border-color .2s,transform .2s;
+  }
+  .cert-card:hover{border-color:rgba(59,130,246,.2);transform:translateY(-2px)}
+  .cert-dot{
+    width:8px;height:8px;border-radius:50%;
+    background:var(--accent);flex-shrink:0;margin-top:.5rem;
+    box-shadow:0 0 6px var(--accent);
+  }
+  .cert-name{font-size:.83rem;color:#cbd5e1;font-weight:500}
+  .cert-org{font-size:.74rem;color:var(--muted);margin-top:.15rem}
+
+  /* ── CONTACT ── */
+  #contact{
+    text-align:center;
+    background:linear-gradient(180deg,var(--bg) 0%,rgba(59,130,246,.05) 100%);
+  }
+  .contact-card{
+    max-width:620px;margin:0 auto;
+    background:var(--surface);border:1px solid var(--border);
+    border-radius:20px;padding:3rem;
+  }
+  .contact-links{display:flex;justify-content:center;flex-wrap:wrap;gap:1rem;margin-top:2rem}
+  .contact-link{
+    display:flex;align-items:center;gap:.6rem;
+    background:rgba(255,255,255,.04);border:1px solid var(--border);
+    color:var(--text);padding:.7rem 1.3rem;border-radius:10px;
+    text-decoration:none;font-size:.88rem;font-weight:500;
+    transition:border-color .2s,transform .2s,background .2s;
+  }
+  .contact-link:hover{border-color:var(--accent);background:rgba(59,130,246,.08);transform:translateY(-2px)}
+  .contact-link svg{width:16px;height:16px;flex-shrink:0}
+
+  /* ── FOOTER ── */
+  footer{
+    text-align:center;padding:2rem 6%;
+    border-top:1px solid var(--border);
+    color:var(--muted);font-size:.8rem;
+  }
+
+  /* ── MOBILE ── */
+  @media(max-width:768px){
+    .nav-links,.nav-cta{display:none}
+    .hamburger{display:flex !important}
+    .mobile-menu{
+      display:none;position:fixed;inset:0;z-index:99;
+      background:rgba(8,11,16,.98);backdrop-filter:blur(20px);
+      flex-direction:column;align-items:center;justify-content:center;gap:2rem;
+    }
+    .mobile-menu.open{display:flex}
+    .mobile-menu a{
+      font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:700;
+      color:#fff;text-decoration:none;
+    }
+    .mobile-close{position:absolute;top:1.5rem;right:6%;font-size:1.5rem;background:none;border:none;color:#fff;cursor:pointer}
+    .about-grid{grid-template-columns:1fr}
+    .about-card{grid-template-columns:1fr 1fr}
+    section{padding:5rem 5%}
+    .exp-timeline{padding-left:1.5rem}
+    .exp-item::before{left:-2rem}
+    .contact-card{padding:2rem 1.5rem}
+  }
+
+  /* Container grid */
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+/* Tech tags */
+.tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tech span {
+  background: rgba(59, 130, 246, 0.1);
+  color: #60a5fa;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+.btn-code, .btn-demo {
+  display: inline-block;
+  padding: .35rem .9rem;
+  border-radius: 6px;
+  font-size: .8rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: border-color .2s, color .2s, background .2s;
+}
+.btn-code {
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #94a3b8;
+}
+.btn-code:hover {
+  border-color: #3b82f6;
+  color: #fff;
+}
+.btn-demo {
+  border: 1px solid rgba(59,130,246,0.4);
+  background: rgba(59,130,246,0.1);
+  color: #60a5fa;
+}
+.btn-demo:hover {
+  background: rgba(59,130,246,0.2);
+}
+.proj-btns {
+  display: flex;
+  gap: .6rem;
+  flex-wrap: wrap;
+  margin-top: .5rem;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
+}
+.features {
+  margin: 15px 0 20px;
+  padding-left: 18px;
+  color: #cbd5e1;
+}
+
+.features li {
+  margin-bottom: 6px;
+}
+@media(max-width:768px){
+
+  /* Hero stats wrap nicely */
+  .hero-stats{
+    gap:1.5rem;
+  }
+
+  /* Projects go single column */
+  .projects-container{
+    grid-template-columns:1fr;
+  }
+
+  /* Skills pills wrap and stay readable */
+  .stack-wrap{
+    gap:8px;
+  }
+  .pill{
+    font-size:13px;
+    padding:9px 14px 9px 10px;
+  }
+  .pill img{
+    width:20px;
+    height:20px;
+  }
+
+  /* Cert grid single column */
+  .cert-grid{
+    grid-template-columns:1fr;
+  }
+
+  /* Education grid single column */
+  .edu-grid{
+    grid-template-columns:1fr;
+  }
+
+  /* Experience timeline less padding */
+  .exp-item{
+    padding:1.2rem;
+  }
+
+  /* Contact card full width */
+  .contact-links{
+    flex-direction:column;
+    align-items:stretch;
+  }
+  .contact-link{
+    justify-content:center;
+  }
+
+  /* Section titles smaller */
+  .section-title{
+    font-size:1.6rem;
+  }
+}
+#scrollTop{
+  position:fixed;
+  bottom:2rem;
+  right:2rem;
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  background:var(--accent);
+  color:#fff;
+  border:none;
+  font-size:1.2rem;
+  cursor:pointer;
+  opacity:0;
+  visibility:hidden;
+  transition:opacity .3s, transform .3s;
+  z-index:999;
+  box-shadow:0 0 20px rgba(59,130,246,.4);
+}
+#scrollTop.visible{
+  opacity:1;
+  visibility:visible;
+}
+#scrollTop:hover{
+  transform:translateY(-3px);
+  box-shadow:0 0 30px rgba(59,130,246,.6);
+}
+.hero-photo-wrap { 
+  flex-shrink: 0;
+  position: absolute;
+  right: 8%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hero-photo-frame {
+  width: 340px;
+  height: 440px;
+  border-radius: 20px;
+  border: 1px solid rgba(59,130,246,0.3);
+  padding: 6px;
+  position: relative;
+  animation: floatUpDown 4s ease-in-out infinite;
+  box-shadow: 0 0 60px rgba(59,130,246,0.2);
+  margin-right: 4%;
+}
+
+.hero-photo-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #0e1a2e, #1a2744);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Syne', sans-serif;
+  font-size: 5rem;
+  font-weight: 800;
+  color: #fff;
+  overflow: hidden;
+}
+
+.hero-photo-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 16px;
+}
+
+@keyframes floatUpDown {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-14px); }
+}
+
+@media(max-width:768px) {
+  .hero-photo-wrap { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">DA.</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#practical-experience">Simulations</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+</ul>
+<button class="hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="document.getElementById('mobileMenu').classList.remove('open')">✕</button>
+  <a href="#about" onclick="document.getElementById('mobileMenu').classList.remove('open')">About</a>
+  <a href="#skills" onclick="document.getElementById('mobileMenu').classList.remove('open')">Skills</a>
+  <a href="#projects" onclick="document.getElementById('mobileMenu').classList.remove('open')">Projects</a>
+  <a href="#experience" onclick="document.getElementById('mobileMenu').classList.remove('open')">Experience</a>
+  <a href="#practical-experience" onclick="document.getElementById('mobileMenu').classList.remove('open')">Simulations</a>
+  <a href="#education" onclick="document.getElementById('mobileMenu').classList.remove('open')">Education</a>
+  <a href="#contact" onclick="document.getElementById('mobileMenu').classList.remove('open')">Contact</a>
+</div>
+
+<section id="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-blob"></div>
+
+  <div style="position:relative;z-index:1;width:100%;display:flex;align-items:center;justify-content:space-between;gap:2rem;">
+    
+    <!-- LEFT: Text content -->
+    <div class="hero-content" style="max-width:680px;">
+      <div class="hero-badge">Available for opportunities</div>
+      <h1 class="hero-name">Durva<br><span>Amin.</span></h1>
+      <p class="hero-title">Full Stack Developer &nbsp;·&nbsp; Data Analyst &nbsp;·&nbsp; Cybersecurity Enthusiast</p>
+      <p class="hero-tagline">Building digital experiences that matter — from intelligent data pipelines to secure, scalable web applications.</p>
+      <div class="hero-actions">
+        <a href="https://durva912.github.io/durva-portfolio/Durva%20Amin%20Resume.pdf" target="_blank" class="btn-primary">My Resume</a>
+        <a href="#contact" class="btn-ghost">Contact Me</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item"><div class="stat-num">5</div><div class="stat-label">Internships</div></div>
+        <div class="stat-item"><div class="stat-num">3</div><div class="stat-label">Forage Sims</div></div>
+        <div class="stat-item"><div class="stat-num">12+</div><div class="stat-label">Certifications</div></div>
+        <div class="stat-item"><div class="stat-num">3</div><div class="stat-label">Tech Domains</div></div>
+      </div>
+    </div>
+
+   <!-- RIGHT: Photo -->
+    <div class="hero-photo-wrap">
+      <div class="hero-photo-frame">
+        <div class="hero-photo-inner">DA</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <span class="section-label">About Me</span>
+      <h2 class="section-title">Passionate about tech at every layer.</h2>
+      <p>Hi! I'm Durva Amin, a B.Tech student at K.J. Somaiya Institute of Technology, Mumbai. I thrive at the intersection of data, security, and software — building solutions that are both intelligent and secure.</p>
+      <p>With hands-on experience from multiple data science internships, cybersecurity-focused projects, and independently built full stack applications, I bring analytical thinking, security awareness, and engineering skills to every problem I tackle.</p>
+      <p>📍 Mumbai, India</p>
+      <div class="about-pills">
+  <span class="about-pill">Problem Solver</span>
+  <span class="about-pill">Quick Learner</span>
+  <span class="about-pill">Team Player</span>
+  <span class="about-pill">Open Source Enthusiast</span>
+</div>
+    </div>
+    <div class="about-card reveal">
+      <div class="mini-stat"><div class="num">5</div><div class="lbl">Internships</div></div>
+      <div class="mini-stat"><div class="num">12+</div><div class="lbl">Certifications</div></div>
+      <div class="mini-stat"><div class="num">3</div><div class="lbl">Forage Sims</div></div>
+      <div class="mini-stat"><div class="num">3</div><div class="lbl">Tech Domains</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="reveal">
+    <span class="section-label">Skills</span>
+    <h2 class="section-title">Technologies I Know</h2>
+  </div>
+
+  <div class="stack-wrap">
+  <span class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">Python</span>
+  <span class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas">Pandas</span>
+  <span class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy">NumPy</span>
+  <span class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">HTML</span>
+  <span class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">CSS</span>
+  <span class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">JavaScript</span>
+  <span class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">React.js</span>
+  <span class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="SQL">SQL</span>
+  <span class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL">PostgreSQL</span>
+  <span class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">Git</span>
+  <span class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">GitHub</span>
+  <span class="pill">
+  <span style="width:24px;height:24px;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;">
+    <svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3 3h8v8H3z" fill="#F2C811"/>
+      <path d="M13 3h8v8h-8z" fill="#F2C811" opacity="0.6"/>
+      <path d="M3 13h8v8H3z" fill="#F2C811" opacity="0.6"/>
+      <path d="M13 13h8v8h-8z" fill="#F2C811" opacity="0.3"/>
+    </svg>
+  </span>
+  Power BI
+</span>
+  <span class="pill">
+    <span class="excel-icon">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" fill="#fff" opacity="0.2"/>
+        <path d="M14 2v6h6" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M8 13l2.5 3.5M13 13l-2.5 3.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </span>
+    Excel
+  </span>
+  <span class="pill">🔐 Cybersecurity</span>
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="reveal">
+    <span class="section-label">Portfolio</span>
+    <h2 class="section-title">Projects</h2>
+    <p class="section-sub">
+      Personal and academic projects showcasing my skills and expertise.
+    </p>
+  </div>
+
+  <div class="projects-container">
+
+    <!-- Style Vault — FEATURED -->
+    <div class="proj-card">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;flex-wrap:wrap;gap:.5rem;">
+        <h3 style="margin:0">Style Vault — AI-Powered Digital Wardrobe</h3>
+        <span style="font-size:.72rem;font-weight:700;letter-spacing:.08em;
+          background:rgba(59,130,246,.15);border:1px solid rgba(59,130,246,.4);
+          color:#60a5fa;padding:.3rem .8rem;border-radius:100px;">
+          ⭐ FEATURED
+        </span>
+      </div>
+      <p>An AI-powered digital wardrobe system that digitizes and organizes clothing, accessories, and footwear. Personalized outfit recommendations based on occasion, location, weather and color preferences.</p>
+      <ul class="features">
+        <li>Personalized outfit recommendations by occasion, weather & location</li>
+        <li>MediaPipe-based body type & skin tone analysis</li>
+        <li>Wardrobe analytics — most/least used items, frequent colors</li>
+        <li>Automatic item categorization via AI</li>
+        <li>Virtual try-on & digital twin (planned)</li>
+        <li>Firebase authentication & real-time database</li>
+      </ul>
+      <div class="tech">
+        <span>React</span>
+        <span>Capacitor</span>
+        <span>FastAPI</span>
+        <span>Firebase</span>
+        <span>Cloudinary</span>
+        <span>MediaPipe</span>
+        <span>Python</span>
+      </div>
+      <div class="proj-btns">
+        <a href="https://github.com/durva912" target="_blank" class="btn-code">View Code</a>
+        <span class="btn-demo" style="cursor:default;opacity:.6">In Development</span>
+      </div>
+    </div>
+
+    
+    <!-- CuisineCanvas -->
+    <div class="proj-card">
+      <h3>CuisineCanvas — Recipe Sharing Web App</h3>
+
+      <p>
+        A recipe sharing platform where users can discover, create, and share recipes.
+        Includes diet-based filtering, favorites system, recipe creation, ingredient checklist,
+        ratings & reviews, and user profiles.
+      </p>
+
+      <ul class="features">
+    <li>Diet-based filtering</li>
+    <li>Favorites system</li>
+    <li>Recipe creation</li>
+    <li>Ingredient checklist</li>
+    <li>Ratings & reviews</li>
+    <li>User profiles</li>
+  </ul>
+
+      <div class="tech">
+        <span>React</span>
+        <span>TypeScript</span>
+        <span>Tailwind CSS</span>
+        <span>JavaScript</span>
+      </div>
+
+      <div class="proj-btns">
+  <a href="https://github.com/durva912/cuisine-canvas-collection.git" target="_blank" class="btn-code">View Code</a>
+  <button class="btn-demo" onclick="openVideo('videos/cusine canvas.mp4')">
+  Watch Demo
+</button>
+</div>
+    </div>
+
+    <!-- StudentConnect -->
+    <div class="proj-card">
+      <h3>StudentConnect — Campus Social Networking Platform</h3>
+
+      <p>
+        A campus networking platform built for students at KJSIT to connect, collaborate,
+        and grow professionally. Features include social feed, blogging, real-time chat,
+        student discovery, teammate matching, and secure authentication.
+      </p>
+
+      <ul class="features">
+    <li>Social feed with posts & likes</li>
+    <li>Blogging platform with categories</li>
+    <li>Real-time peer chat</li>
+    <li>Student search & advanced filtering</li>
+    <li>Teammate matching for hackathons</li>
+    <li>Follow / unfollow system</li>
+    <li>JWT-based authentication</li>
+  </ul>
+
+      <div class="tech">
+        <span>React</span>
+        <span>TypeScript</span>
+        <span>FastAPI</span>
+        <span>PostgreSQL</span>
+        <span>Python</span>
+      </div>
+
+      <div class="proj-btns">
+  <a href="https://github.com/durva912/student-connect-hub.git" target="_blank" class="btn-code">View Code</a>
+  <button class="btn-demo" onclick="openVideo('videos/student connect.mp4')">
+  Watch Demo
+</button>
+</div>
+    </div>
+
+    <!-- WeatherWise -->
+    <div class="proj-card">
+  <h3>WeatherWise — Weather Forecast Web App</h3>
+
+  <p>
+    A weather application that provides real-time weather updates and forecasts for different locations.
+  </p>
+
+  <ul class="features">
+    <li>Real-time weather data by city</li>
+    <li>Outfit recommendations based on weather</li>
+    <li>Temperature, humidity & wind details</li>
+    <li>Event Schedule and get weather updates for events</li>
+    <li>Get weather updates for most locations in route to your destination </li>
+  </ul>
+
+  <div class="tech">
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>JavaScript</span>
+    <span>OpenWeather API</span>
+    <span>Leaflet and OpenStreetMap</span>
+  </div>
+
+  <div class="proj-btns">
+  <a href="https://github.com/durva912/weather_wise.git" target="_blank" class="btn-code">View Code</a>
+  <button class="btn-demo" onclick="openVideo('videos/weather wise.mp4')">
+  Watch Demo
+</button>
+</div>
+</div>
+
+<!-- CashFlow Buddy -->
+<div class="proj-card">
+  <h3>CashFlow Buddy — Personal Finance Tracker</h3>
+
+  <p>
+    A personal finance management app to track income, expenses, and maintain better financial control.
+  </p>
+
+  <ul class="features">
+    <li>All-in-one financial dashboard</li>
+    <li>Expenses + hisab tracking together</li>
+    <li>Per-friend balance tracking</li>
+    <li>Category-wise expense insights</li>
+    <li>Quick and simple money management</li>
+  </ul>
+
+  <div class="tech">
+    <span>React</span>
+    <span>TypeScript</span>
+    <span>Python</span>
+    <span>FastAPI</span>
+    <span>PostgreSQL</span>
+  </div>
+
+  <div class="proj-btns">
+  <a href="https://github.com/durva912/cash-flow-buddy.git" target="_blank" class="btn-code">View Code</a>
+  <button class="btn-demo" onclick="openVideo('videos/Cash flow.mp4')">
+  Watch Demo
+</button>
+</div>
+</div>  
+
+  <!-- Web Vulnerability Scanner -->
+  <div class="proj-card">
+  <h3>Web Vulnerability Scanner — Security Testing Tool</h3>
+
+  <p>
+    A cybersecurity tool designed to scan websites for potential vulnerabilities and security risks, helping developers improve application safety.
+  </p>
+
+  <ul class="features">
+    <li>Scans websites for common vulnerabilities</li>
+    <li>Detects security flaws and risks</li>
+    <li>Provides basic vulnerability insights</li>
+    <li>Helps improve web application security</li>
+    <li>Simple and efficient scanning interface</li>
+  </ul>
+
+  <div class="tech">
+    <span>Python</span>
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>Javascript</span>
+    <span>Cybersecurity Tools</span>
+  </div>
+
+  <div class="proj-btns">
+  <a href="https://github.com/durva912/Web-Vulnerability-Scanner-.git" target="_blank" class="btn-code">View Code</a>
+  <button class="btn-demo" onclick="openVideo('videos/Web Vulnerability Scanner.mp4')">
+  Watch Demo
+</button>
+</div>
+</div>  
+
+  <!-- Cyber Password Analyzer -->
+  <div class="proj-card">
+  <h3>Cyber Password Analyzer — Password Strength Checker</h3>
+
+  <p>
+    A security-focused tool that analyzes password strength and helps users create stronger, safer passwords to protect their accounts.
+  </p>
+
+  <ul class="features">
+    <li>Real-time password strength analysis</li>
+    <li>Checks complexity and security level</li>
+    <li>Suggests improvements for stronger passwords</li>
+    <li>Prevents use of weak or common passwords</li>
+    <li>Simple and interactive user interface</li>
+  </ul>
+
+  <div class="tech">
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>Javascript</span>
+    <span>Python</span>
+    <span>Cybersecurity Concepts</span>
+  </div>  
+
+  <div class="proj-btns">
+  <a href="https://github.com/durva912/password-strength-analyzer.git" target="_blank" class="btn-code">View Code</a>
+   <button class="btn-demo" onclick="openVideo('videos/cyber password analyzer.mp4')">
+  Watch Demo
+</button>
+</div>
+</div>
+
+<!-- Cyber Post Scanner -->
+  <div class="proj-card">
+  <h3>Cyber Post Scanner — Social Media Safety Tool</h3>
+
+  <p>
+    A cybersecurity-focused tool that scans social media posts to detect harmful, unsafe, or sensitive content before publishing.
+  </p>
+
+  <ul class="features">
+    <li>Real-time post content analysis</li>
+    <li>Detects offensive or risky keywords</li>
+    <li>Promotes safer social media usage</li>
+    <li>Simple and user-friendly interface</li>
+    <li>Helps prevent accidental harmful posts</li>
+  </ul>
+
+  <div class="tech">
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>Javascript</span>
+    <span>Python</span>
+    <span>Machine Learning</span>
+  </div>
+
+  <div class="proj-btns">
+  <a href="https://github.com/durva912/cyberport-scanner.git" target="_blank" class="btn-code">View Code</a>
+  <button class="btn-demo" onclick="openVideo('videos/cyber post scanner.mp4')">
+  Watch Demo
+</button>
+</div>
+</div>
+
+<!-- Hydration Buddy -->
+    <div class="proj-card">
+      <h3>Hydration Buddy — Animated Desktop Water Reminder</h3>
+
+      <p>
+        A lightweight Windows desktop companion that keeps you hydrated with a fully
+        animated character. She walks in from the edge of the screen, prompts you to
+        drink water, and plays a real drinking animation — built with custom sprite-based
+        frame animation instead of a static popup.
+      </p>
+
+      <ul class="features">
+        <li>Custom walk-cycle & drink animation using 144 hand-processed sprite frames</li>
+        <li>Borderless, transparent overlay window blending into the desktop</li>
+        <li>System tray controls — pause, snooze, or trigger reminders on demand</li>
+        <li>Persistent daily hydration tracking (glass count, streaks)</li>
+        <li>Configurable reminder & snooze intervals</li>
+        <li>Auto-launches at Windows login</li>
+      </ul>
+
+      <div class="tech">
+        <span>Python</span>
+        <span>Tkinter</span>
+        <span>Pillow</span>
+        <span>pystray</span>
+        <span>PyInstaller</span>
+      </div>
+
+      <div class="proj-btns">
+        <a href="https://github.com/durva912/HydrationBuddy.git" target="_blank" class="btn-code">View Code</a>
+      <button class="btn-demo" onclick="openVideo('videos/hydration buddy.mp4')">Watch Demo</button>
+      </div>
+    </div>
+
+  <!-- Habit Forge -->
+  <div class="proj-card">
+  <h3>Habit Forge — Productivity & Habit Tracker</h3>
+
+  <p >
+    A smart habit tracking application designed to help users build consistency, stay productive, and achieve personal goals through structured habit management.
+  </p>
+
+  <ul class="features">
+    <li>Create and manage daily habits</li>
+    <li>Track streaks and consistency</li>
+    <li>Visual progress insights</li>
+    <li>Simple and clean user interface</li>
+    <li>Motivation through habit analytics</li>
+  </ul>
+
+  <div class="tech">
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>Javascript</span>
+    <span>Python</span>
+    <span>Flask</span>
+  </div>
+
+  <div class="proj-btns">
+  <a href="https://github.com/durva912/habitforge.git" target="_blank" class="btn-code">View Code</a>
+  <button class="btn-demo" onclick="openVideo('videos/habit forge.mp4')">
+  Watch Demo
+</button>
+</div>
+</div>
+  </div>
+
+  
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="reveal">
+    <span class="section-label">Work History</span>
+    <h2 class="section-title">Experience</h2>
+    <p class="section-sub">Built a strong analytical foundation through data science internships while independently developing full stack and cybersecurity projects.</p>
+  </div>
+
+  <div class="exp-timeline">
+
+      <div class="exp-item reveal">
+      <div class="exp-header">
+        <div class="exp-role">Data Science Intern</div>
+        <div class="exp-date">Feb – Mar 2026</div>
+      </div>
+      <div class="exp-company">CodeAlpha &nbsp;·&nbsp; Virtual (Lucknow)</div>
+      <p style="font-size:.85rem;color:#94a3b8">Completed 3 end-to-end data science projects covering EDA, ML model development, and data visualization. Delivered findings through structured reports and visual dashboards. ID: CA/DF1/23895</p>
+      <div class="exp-tags"><span class="tag">Python</span><span class="tag">Machine Learning</span><span class="tag">EDA</span><span class="tag">Data Viz</span></div>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-header">
+        <div class="exp-role">Data Science Intern</div>
+        <div class="exp-date">Dec 2025 – Jan 2026</div>
+      </div>
+      <div class="exp-company">Cognifyz Technologies &nbsp;·&nbsp; Virtual (Nagpur)</div>
+      <p style="font-size:.85rem;color:#94a3b8">Performed statistical analysis and feature engineering on real-world datasets. Built and evaluated predictive models, improving understanding of key business variables. ID: CTI/A1/C270093</p>
+      <div class="exp-tags"><span class="tag">Python</span><span class="tag">Feature Engineering</span><span class="tag">Predictive Modeling</span></div>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-header">
+        <div class="exp-role">Data Science Intern</div>
+        <div class="exp-date">Dec 2025 – Jan 2026</div>
+      </div>
+      <div class="exp-company">IncodeVision &nbsp;·&nbsp; Virtual</div>
+      <p style="font-size:.85rem;color:#94a3b8">Applied data science techniques to real-world datasets with focus on model accuracy and insight generation. Delivered clean, documented notebooks for each task. ID: ICV/DEC25/35300</p>
+      <div class="exp-tags"><span class="tag">Data Science</span><span class="tag">ML Models</span><span class="tag">Pandas</span></div>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-header">
+        <div class="exp-role">Data Science Intern</div>
+        <div class="exp-date">Nov 2025</div>
+      </div>
+      <div class="exp-company">SkillCraft Technology &nbsp;·&nbsp; Virtual (Vashi, Navi Mumbai)</div>
+      <p style="font-size:.85rem;color:#94a3b8">Developed end-to-end data pipelines and applied ML algorithms to extract actionable insights. Recognized with a recommendation from the Tech Lead. ID: SCT/NOV25/0078</p>
+      <div class="exp-tags"><span class="tag">Data Pipelines</span><span class="tag">ML Algorithms</span><span class="tag">Python</span></div>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-header">
+        <div class="exp-role">Data Science Intern</div>
+        <div class="exp-date">Jul – Aug 2025</div>
+      </div>
+      <div class="exp-company">Prodigy InfoTech &nbsp;·&nbsp; Virtual (Mumbai)</div>
+      <p style="font-size:.85rem;color:#94a3b8">First professional internship — performed data cleaning and EDA across multiple datasets, built ML models, and delivered data-driven reports. Recommended by the Software Engineering Manager. ID: PIT/JUL25/10786</p>
+      <div class="exp-tags"><span class="tag">Python</span><span class="tag">ML</span><span class="tag">Data Analysis</span><span class="tag">Reporting</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Practical Experience -->
+<section id="Practical Experience">
+  <div class="reveal">
+    <span class="section-label">Portfolio</span>
+    <h2 class="section-title">Practical Experience</h2>
+    <p class="section-sub">Real-world projects and internships</p>
+  </div>
+  <div class="projects-grid">
+
+    <div class="proj-card reveal">
+      <div class="proj-icon">📊</div>
+      <div class="proj-title">Deloitte — Data Analytics</div>
+      <div class="proj-desc">Analyzed business data to uncover trends and built dashboards to present insights to stakeholders in Deloitte's virtual analytics program.</div>
+      <div class="proj-tags"><span class="proj-tag">Data Analytics</span><span class="proj-tag">Tableau</span><span class="proj-tag">Deloitte</span></div>
+    </div>
+    <div class="proj-card reveal">
+      <div class="proj-icon">🤖</div>
+      <div class="proj-title">Tata — GenAI Data Analytics</div>
+      <div class="proj-desc">Applied Generative AI techniques to accelerate data analysis workflows, leveraging LLMs for business insight generation.</div>
+      <div class="proj-tags"><span class="proj-tag">GenAI</span><span class="proj-tag">Data Analytics</span><span class="proj-tag">Tata</span></div>
+    </div>
+    <div class="proj-card reveal">
+      <div class="proj-icon">🌱</div>
+      <div class="proj-title">Tata — ESG Simulation</div>
+      <div class="proj-desc">Developed ESG frameworks and sustainability strategies, analyzing environmental and social impact for Tata's corporate responsibility initiative.</div>
+      <div class="proj-tags"><span class="proj-tag">ESG</span><span class="proj-tag">Sustainability</span><span class="proj-tag">Strategy</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="reveal">
+    <span class="section-label">Academic Background</span>
+    <h2 class="section-title">Education</h2>
+    <p class="section-sub">Formal education backed by a relentless commitment to self-learning.</p>
+  </div>
+
+  <div class="edu-grid">
+
+    <!-- B.Tech -->
+    <div class="edu-card reveal">
+      <div class="edu-degree">B.Tech — Engineering</div>
+      <div class="edu-school">K.J. Somaiya Institute of Technology</div>
+      <div class="edu-meta">📍 Mumbai, India &nbsp;·&nbsp; 2023 – 2027</div>
+    </div>
+
+    <!-- 12th -->
+    <div class="edu-card reveal">
+      <div class="edu-degree">12th Grade — Science & Commerce</div>
+      <div class="edu-school">Late B.G. Kabra Science & Commerce Junior College</div>
+      <div class="edu-meta">📍 Malegaon, India &nbsp;·&nbsp; 2023</div>
+    </div>
+
+    <!-- 10th -->
+    <div class="edu-card reveal">
+      <div class="edu-degree">10th Grade</div>
+      <div class="edu-school">Adinath English Medium School</div>
+      <div class="edu-meta">📍 Malegaon, India &nbsp;·&nbsp; 2021</div>
+    </div>
+
+  </div>
+</section>
+
+  <!-- Certifications -->
+  <section id="certifications">
+  <div class="reveal">
+    <span class="section-label">Achievements</span>
+    <h2 class="section-title" style="margin-bottom:2rem">Certifications</h2>
+  </div>
+  <div class="cert-grid">
+    <div class="cert-card reveal"><div class="cert-dot"></div><div><div class="cert-name">CS50P — Intro to Programming with Python</div><div class="cert-org">HarvardX / edX · Free Audit</div></div></div>
+    <div class="cert-card reveal"><div class="cert-dot"></div><div><div class="cert-name">CS50AI — Intro to AI with Python</div><div class="cert-org">HarvardX / edX · Free Audit</div></div></div>
+    <div class="cert-card reveal"><div class="cert-dot"></div><div><div class="cert-name">ML and AI with Python (CS109xa)</div><div class="cert-org">HarvardX / edX · Free Audit</div></div></div>
+    <div class="cert-card reveal"><div class="cert-dot"></div><div><div class="cert-name">Business Analytics Workshop</div><div class="cert-org">Techfest IIT Bombay &amp; BSE Institute · Dec 2024</div></div></div>
+    <div class="cert-card reveal"><div class="cert-dot"></div><div><div class="cert-name">Python Training (80%) &amp; C Training (95%)</div><div class="cert-org">IIT Bombay Spoken Tutorial · 2024–25</div></div></div>
+    <div class="cert-card reveal"><div class="cert-dot"></div><div><div class="cert-name">Digital Productivity with AI</div><div class="cert-org">UNICEF / YuWaah · Jul 2025 · 100%</div></div></div>
+    <div class="cert-card reveal"><div class="cert-dot"></div><div><div class="cert-name">AI For India 2.0</div><div class="cert-org">GUVI / NSDC · Aug 2023</div></div></div>
+    <div class="cert-card reveal"><div class="cert-dot"></div><div><div class="cert-name">Yuva AI for All</div><div class="cert-org">INDIAai / nasscom · Dec 2025</div></div></div>
+    <div class="cert-card reveal"><div class="cert-dot"></div><div><div class="cert-name">TCS iON Career Edge — Young Professional</div><div class="cert-org">TCS iON · Jun 2024</div></div></div>
+    <div class="cert-card reveal"><div class="cert-dot"></div><div><div class="cert-name">Business Growth: Zero to $100M</div><div class="cert-org">Semrush Academy</div></div></div>
+    <div class="cert-card reveal"><div class="cert-dot"></div><div><div class="cert-name">Duet AI in Google Sheets &amp; Slides</div><div class="cert-org">Google Cloud / Simplilearn · Feb 2024</div></div></div>
+    <div class="cert-card reveal"><div class="cert-dot"></div><div><div class="cert-name">AICTE Student Learning — Operating System</div><div class="cert-org">AICTE · Apr 2025 · Excellent Rating</div></div></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-card reveal">
+    <span class="section-label">Get In Touch</span>
+    <h2 class="section-title">Let's Work Together</h2>
+    <p style="color:var(--muted);margin-bottom:.5rem">Open to internships, collaborations, and full-time opportunities. Based in Mumbai, India — available remotely worldwide.</p>
+    <div class="contact-links">
+      <button class="contact-link" onclick="location.href='mailto:durvaamin.work@gmail.com'">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        durvaamin.work@gmail.com
+      </button>
+      <a href="#" class="contact-link" onclick="window.open('https://www.linkedin.com/in/durva-amin-72586224a','_blank');return false;">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+      <a href="#" class="contact-link" onclick="window.open('https://github.com/durva912','_blank');return false;">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        GitHub
+      </a>
+      <button class="contact-link" style="cursor:default;pointer-events:none;opacity:.7">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  Phone available on request
+</button>
+    </div>
+  </div>
+</section>
+
+<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+
+<footer>
+  <p>© 2026 Durva Amin. Crafted with 💙 in Mumbai, India.</p>
+</footer>
+
+<script>
+  // ── SCROLL REVEAL ──
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(r => obs.observe(r));
+
+  // ── SKILL BAR ANIMATION ──
+  const barObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('.skill-bar-fill').forEach(bar => {
+          bar.style.width = bar.dataset.w + '%';
+        });
+        barObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  document.querySelectorAll('.skill-cat').forEach(c => barObs.observe(c));
+
+  // ── NAV SCROLL STYLE ──
+  window.addEventListener('scroll', () => {
+    document.querySelector('nav').style.background =
+      window.scrollY > 60 ? 'rgba(8,11,16,0.95)' : 'rgba(8,11,16,0.75)';
+  });
+
+  // ── ACTIVE NAV LINK ──
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 120) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current ? '#fff' : '';
+    });
+  });
+  // Scroll to top button
+const scrollBtn = document.getElementById('scrollTop');
+window.addEventListener('scroll', () => {
+  scrollBtn.classList.toggle('visible', window.scrollY > 400);
+});
+
+function openVideo(src){
+  const modal = document.getElementById('videoModal');
+  const video = document.getElementById('demoVideo');
+  video.src = src;
+  modal.style.display = 'flex';
+}
+
+function closeVideo(){
+  const modal = document.getElementById('videoModal');
+  const video = document.getElementById('demoVideo');
+  modal.style.display = 'none';
+  video.pause();
+  video.currentTime = 0;
+}
+</script>
+
+<div id="videoModal" style="
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.85);
+  justify-content:center;
+  align-items:center;
+  z-index:1000;
+">
+
+  <!-- Close button -->
+  <span onclick="closeVideo()" style="
+    position:absolute;
+    top:20px;
+    right:30px;
+    font-size:28px;
+    color:white;
+    cursor:pointer;
+    z-index:1001;
+  ">✕</span>
+
+  <video id="demoVideo" controls style="
+    max-width:80%;
+    border-radius:12px;
+  "></video>
+
+</div>
+</body>
+</html>
