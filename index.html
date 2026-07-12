@@ -1138,6 +1138,46 @@
 </div>
 </div>
 
+
+<!-- Sketch -->
+    <div class="proj-card">
+      <h3>Sketch — Image-to-Sketch Animation Engine</h3>
+
+      <p>
+        A production-grade Python application that turns any image into a realistic
+        hand-drawn animation using Turtle graphics — full computer vision pipeline
+        from edge detection to vectorized stroke rendering, with pencil sketch and
+        neon glow effects, exported as GIF and MP4.
+      </p>
+
+      <ul class="features">
+        <li>OpenCV pipeline: denoising, CLAHE contrast enhancement, adaptive threshold + Canny edge fusion</li>
+        <li>Contour vectorization with Douglas-Peucker curve simplification</li>
+        <li>KDTree-based path merging & greedy nearest-neighbor stroke ordering for natural draw order</li>
+        <li>Fullscreen buffered Turtle renderer — autoscaled, handles 10,000+ points smoothly</li>
+        <li>Pencil sketch effect: jittered strokes, simulated pressure, multi-pass graphite buildup</li>
+        <li>Neon glow effect: multi-layer additive glow simulation with pulse animation</li>
+        <li>Crossfade reveal from line drawing into the original photo</li>
+        <li>Keyboard controls, GIF/MP4 export, fully config-driven — works on any image with zero code changes</li>
+      </ul>
+
+      <div class="tech">
+        <span>Python</span>
+        <span>OpenCV</span>
+        <span>scikit-image</span>
+        <span>Turtle</span>
+        <span>NumPy</span>
+        <span>SciPy</span>
+        <span>imageio</span>
+      </div>
+
+      <div class="proj-btns">
+        <a href="https://github.com/durva912/sketch.git" target="_blank" class="btn-code">View Code</a>
+        <button class="btn-demo" onclick="openVideo('sketch.mp4')">Watch Demo</button>
+      </div>
+    </div>
+
+
 <!-- Code Explainer -->
 <div class="proj-card">
   <h3>Code Explainer — AI Project Understanding Tool</h3>
