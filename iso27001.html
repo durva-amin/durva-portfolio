@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mini ISO 27001 ISMS Documentation Pack | Durva Amin</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #080b10;
+      --surface: #0e1219;
+      --border: rgba(255,255,255,0.07);
+      --accent: #3b82f6;
+      --accent2: #06b6d4;
+      --text: #e2e8f0;
+      --muted: #64748b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      line-height: 1.7;
+      min-height: 100vh;
+      padding: 60px 20px;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(
+          circle at top right,
+          rgba(59,130,246,0.08),
+          transparent 35%
+        );
+      pointer-events: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .label {
+      display: inline-block;
+      color: #60a5fa;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
+
+      background: linear-gradient(
+        135deg,
+        #ffffff 35%,
+        var(--accent),
+        var(--accent2)
+      );
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .intro {
+      color: #94a3b8;
+      max-width: 780px;
+      margin-bottom: 40px;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .document-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-top: 1px solid rgba(59,130,246,0.25);
+      border-radius: 16px;
+      padding: 22px 24px;
+      margin-bottom: 16px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+
+      transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .document-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(59,130,246,0.45);
+      box-shadow: 0 10px 35px rgba(0,0,0,0.25);
+    }
+
+    .document-card h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .view-btn {
+      display: inline-block;
+      padding: 9px 18px;
+      border-radius: 7px;
+      border: 1px solid rgba(59,130,246,0.4);
+      background: rgba(59,130,246,0.1);
+      color: #60a5fa;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: 0.2s;
+    }
+
+    .view-btn:hover {
+      background: rgba(59,130,246,0.2);
+      border-color: var(--accent);
+      color: #ffffff;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 30px;
+      color: #94a3b8;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover {
+      color: var(--accent);
+    }
+
+    @media (max-width: 650px) {
+      body {
+        padding: 40px 16px;
+      }
+
+      .document-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .view-btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="container">
+
+    <span class="label">GRC Portfolio Project</span>
+
+    <h1>Mini ISO 27001 ISMS Documentation Pack</h1>
+
+    <p class="intro">
+      A practical ISO/IEC 27001 documentation project developed to demonstrate
+      understanding of Information Security Management System documentation,
+      risk treatment, security objectives, and control applicability.
+    </p>
+
+
+    <!-- DOCUMENT 1 -->
+    <div class="document-card">
+      <h3>01 - ISMS Scope</h3>
+
+      <a
+        href="projects/Mini%20ISO%2027001%20ISMS%20Documentation%20Pack/01%20-%20ISMS%20Scope.pdf"
+        class="view-btn">
+        View Document
+      </a>
+    </div>
+
+
+    <!-- DOCUMENT 2 -->
+    <div class="document-card">
+      <h3>02 - Information Security Policy</h3>
+
+      <a
+        href="projects/Mini%20ISO%2027001%20ISMS%20Documentation%20Pack/02%20-%20Information%20Security%20Policy.pdf"
+        class="view-btn">
+        View Document
+      </a>
+    </div>
+
+
+    <!-- DOCUMENT 3 -->
+    <div class="document-card">
+      <h3>03 - Information Security Objectives</h3>
+
+      <a
+        href="projects/Mini%20ISO%2027001%20ISMS%20Documentation%20Pack/03%20-%20Information%20Security%20Objectives.pdf"
+        class="view-btn">
+        View Document
+      </a>
+    </div>
+
+
+    <!-- DOCUMENT 4 -->
+    <div class="document-card">
+      <h3>04 - Risk Treatment Plan</h3>
+
+      <a
+        href="projects/Mini%20ISO%2027001%20ISMS%20Documentation%20Pack/04%20-%20Risk%20Treatment%20Plan.pdf"
+        class="view-btn">
+        View Document
+      </a>
+    </div>
+
+
+    <!-- DOCUMENT 5 -->
+    <div class="document-card">
+      <h3>05 - Statement of Applicability</h3>
+
+      <a
+        href="projects/Mini%20ISO%2027001%20ISMS%20Documentation%20Pack/05%20-%20Statement%20of%20Applicability.pdf"
+        class="view-btn">
+        View Document
+      </a>
+    </div>
+
+
+    <!-- BACK TO MAIN PORTFOLIO -->
+    <a href="index.html#projects" class="back-link">
+      ← Back to Portfolio
+    </a>
+
+  </main>
+
+</body>
+</html>
